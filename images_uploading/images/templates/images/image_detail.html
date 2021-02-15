@@ -1,0 +1,23 @@
+{% extends 'images/index.html' %}
+
+{% block content %}
+    <h1>{{ image }}</h1>
+
+    <img src="{{ img_url }}" alt="{{ image }}">
+
+    <div>
+        <a href="{% url 'images:image_list'%}">К списку всех изображений</a>
+    </div>
+    <div>
+        <a href="{% url 'images:index'%}">На главную</a>
+    </div>
+    <div>
+        <a href="{% url 'images:image_create'%}">Добавить изображение</a>
+    </div>
+
+    <form method="get" action="{% url 'images:image_detail' pk=image.id %}">
+        {{ form.as_p }}
+        <button type="submit">Поменять размер изображения</button>
+    </form>
+
+{% endblock %}

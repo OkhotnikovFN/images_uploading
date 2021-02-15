@@ -1,0 +1,19 @@
+{% extends 'images/index.html' %}
+
+{% block content %}
+    <h1>Добавить изображение</h1>
+
+    <form method="post" action="{% url 'images:image_create' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить изображение</button>
+    </form>
+
+    <div>
+        <a href="{% url 'images:image_list'%}">К списку всех изображений</a>
+    </div>
+    <div>
+        <a href="{% url 'images:index'%}">На главную</a>
+    </div>
+
+{% endblock %}

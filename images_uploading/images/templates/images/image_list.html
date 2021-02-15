@@ -1,0 +1,24 @@
+{% extends 'images/index.html' %}
+
+{% block content %}
+    <h1>Все изображения</h1>
+
+    <ul>
+    {% for image in images %}
+        <li>
+            <a href="{% url 'images:image_detail' pk=image.id %}">
+                {{ image}}
+            </a>
+        </li>
+    {% empty %}
+        <li>Доступных изображений пока еще нету</li>
+    {% endfor %}
+    </ul>
+
+    <div>
+        <a href="{% url 'images:index'%}">На главную</a>
+    </div>
+    <div>
+        <a href="{% url 'images:image_create'%}">Добавить изображение</a>
+    </div>
+{% endblock %}

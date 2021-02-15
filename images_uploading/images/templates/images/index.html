@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изображения</title>
+</head>
+<body>
+
+    {% block content %}
+
+        <h1>Сервис для добавления изображжения в базу</h1>
+        <div>
+            <a href="{% url 'images:image_list'%}">Посмотреть все изображения</a>.
+        </div>
+        <div>
+            <a href="{% url 'images:image_create'%}">Добавить изображение</a>
+        </div>
+
+    {% endblock %}
+
+</body>
+</html>
